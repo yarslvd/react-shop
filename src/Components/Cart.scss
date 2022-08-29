@@ -1,0 +1,128 @@
+$main-black: #424242;
+
+body {
+    background-color: #fff;
+}
+
+.cart {
+    margin-top: 70px;
+}
+
+.mycart {
+    .myCart {
+        display: flex;
+        justify-content: space-between;
+
+        .total-price {
+            background: #FAF9F9;
+            padding: 10px;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .final {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            margin-top: 40px;
+
+            span:nth-child(2) {
+                border-bottom: 2px solid #EFEFEF;
+            }
+
+            span {
+                color: $main-black;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
+        .full-price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 32px 25px 0;
+
+            h2 {
+                font-weight: 600;
+                font-size: 45px;
+                color: $main-black;
+            }
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            background-color: #CFA5A5;
+            padding: 13px 45px;
+            border-radius: 46px;
+            width: 440px;
+            align-self: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+    }
+
+    .heading {
+        h3 {
+            font-weight: 600;
+            font-size: 28px;
+            padding: 24px 0;
+            margin: 0;
+        }
+    }
+
+    .cart-item:first-child {
+        border-top: 1px solid #BDBDBD;
+        color: $main-black;
+    }
+
+    .cart-item {
+        display: grid;
+        grid-template-columns: 0.4fr 5fr 2fr 1fr 2fr 0.2fr;
+        grid-gap: 70px;
+        align-items: center;
+        width: 1075px;
+
+        img {
+            width: 200px;
+            height: 150px;
+        }
+
+        span {
+            color: $main-black;
+            font-weight: 600;
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            padding: 0 10px;
+        }
+
+        .card-name {
+            font-size: 18px;
+        }
+
+        .card-price, .final-price {
+            font-size: 24px;
+        }
+
+        .icon {
+            width: 24px;
+        }
+
+        .quantity {
+            border: 1px solid #BDBDBD;
+            border-radius: 46px;
+            padding: 5px;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

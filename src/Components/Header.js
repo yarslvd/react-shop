@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
     let items = [];
@@ -21,7 +23,9 @@ function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto nav1">
-                    <Nav.Link href="#home">Каталог</Nav.Link>
+                    <Link to='/'>
+                        <Nav.Link href='/'>Каталог</Nav.Link>
+                    </Link>
                     <Nav.Link href="#link">Оплата и доставка</Nav.Link>
                     <Nav.Link href="#link">Бонусная программа</Nav.Link>
                     <Nav.Link href="#link">О компании</Nav.Link>
@@ -44,9 +48,11 @@ function Header() {
                     <Nav.Item href="#link">
                         <Button text='Избранное' path='./img/fav.svg' items = {items.length}/>
                     </Nav.Item>
-                    <Nav.Item href="#link">
-                        <Button text='Корзина' path='./img/bin.svg'/>
-                    </Nav.Item>
+                    <Link to='/cart'>
+                        <Nav.Item href="/cart">
+                            <Button text='Корзина' path='./img/bin.svg'/>
+                        </Nav.Item>
+                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

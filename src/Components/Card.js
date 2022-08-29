@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -21,6 +22,10 @@ function ItemCard(props) {
         return setChangeShop(!changeShop);
     }
 
+    const getEl = () => {
+        sessionStorage.setItem('card', JSON.stringify(card));
+    }
+
     return (
         <Card style={{ width: '245px', height: '430px' }}>
             <div class="card-header">
@@ -33,7 +38,9 @@ function ItemCard(props) {
             </div>
             <Card.Img variant="top" src={card.img} />
             <Card.Body>
-                <Card.Title>{card.name}</Card.Title>
+                <Link to='/item'>
+                    <Card.Title onClick={getEl}>{card.name}</Card.Title>
+                </Link>
                 <Card.Text>
                     <div className='colors'>
                         <Circle bg = '#696837'/>

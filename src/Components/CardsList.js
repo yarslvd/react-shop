@@ -9,7 +9,6 @@ function CardList(props) {
         list.length === 0 ? <Card key = {card.id} card = {card}/> : list.map(p => p[0] === card.category ? <Card key = {card.id} card = {card}/> : null)
     )
 
-
     return (
         <Row md={4}>
             {cardElements}
