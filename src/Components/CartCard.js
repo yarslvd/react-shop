@@ -16,6 +16,7 @@ function CartCard(props) {
         price === 10 * initialPrice ? setPrice(initialPrice * 10) : setPrice(initialPrice * (count + 1));
         localStorage.setItem(card.id + 'count', count > 9 ? JSON.stringify(count) : JSON.stringify(count + 1));
         localStorage.setItem(card.id + 'price', price === 10 * initialPrice ? JSON.stringify(price) : JSON.stringify(price + initialPrice));
+        window.location.reload();
     }
 
     const minusItem = () => {
@@ -24,6 +25,7 @@ function CartCard(props) {
         price === initialPrice ? setPrice(initialPrice) : setPrice(price - initialPrice);
         localStorage.setItem(card.id + 'count', JSON.stringify(count - 1));
         localStorage.setItem(card.id + 'price', JSON.stringify(price - initialPrice));
+        window.location.reload();
     }
 
     const deleteItem = () => {
@@ -34,22 +36,20 @@ function CartCard(props) {
         window.location.reload();
     }
 
-
-
     return (
         <>
-        <div className="cart-item">
-            <img src={card.img} alt = 'Card'/>
-            <span className="card-name">{card.name}</span>
-            <span className="card-price">{card.price}</span>
-            <div className="quantity">
-                <button onClick={minusItem}>-</button>
-                <span className='itemsCount'>{count}</span>
-                <button onClick={plusItem}>+</button>
+            <div className="cart-item">
+                <img src={card.img} alt = 'Card'/>
+                <span className="card-name">{card.name}</span>
+                <span className="card-price">{card.price}</span>
+                <div className="quantity">
+                    <button onClick={minusItem}>-</button>
+                    <span className='itemsCount'>{count}</span>
+                    <button onClick={plusItem}>+</button>
+                </div>
+                <span className='final-price'>{price}$</span>
+                <button onClick={deleteItem}><img src='./img/trash.svg' className='icon' alt='Delete item'/></button>
             </div>
-            <span className='final-price'>{price}$</span>
-            <button onClick={deleteItem}><img src='./img/trash.svg' className='icon' alt='Delete item'/></button>
-        </div>
         </>
     )
 }
